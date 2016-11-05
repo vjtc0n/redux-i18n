@@ -66,3 +66,4 @@ I18n.propTypes = {
 }
 
 export default I18n
+
