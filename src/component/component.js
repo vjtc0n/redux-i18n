@@ -1,20 +1,31 @@
 /*
  * Project: redux-i18n
  * File: component/component.js
+ * @flow
+ * vim:ft=javascript.jsx:
  */
 
 import React from 'react'
 import deepForceUpdate from 'react-deep-force-update'
 
+type Props = {
+  translation: Object
+}
+
+type State = {
+
+}
+
+
 class I18n extends React.Component {
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props)
     this.trans = this.trans.bind(this)
   }
 
   // Check if the text need replace some params
-  params(text, params) {
+  params(text: string, params: Object) {
     if (params !== undefined) {
       for (let k in params) {
         let reg = new RegExp('\{' + k + '\}', 'g')
@@ -25,7 +36,7 @@ class I18n extends React.Component {
   }
 
   // Main method for translating texts
-  trans(textKey, params, comment) {
+  trans(textKey: string, params: Object, comment: string) {
     let langMessages = this.props.translations[this.props.lang]
 
     if (langMessages === undefined) {
@@ -46,7 +57,7 @@ class I18n extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: Props, prevState: State) {
     if (prevProps.lang !== this.props.lang) {
       deepForceUpdate(this)
     }
