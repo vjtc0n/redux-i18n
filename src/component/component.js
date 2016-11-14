@@ -9,15 +9,19 @@ import React from 'react'
 import deepForceUpdate from 'react-deep-force-update'
 
 type Props = {
-  translation: Object
+  translations: Object;
+  lang: string;
+  children: Object;
 }
 
 type State = {
-
 }
 
 
 class I18n extends React.Component {
+  props: Props
+  state: State
+  trans: (textKey: string, params: Object, comment: string) => string
 
   constructor(props: Props) {
     super(props)
