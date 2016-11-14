@@ -29,7 +29,7 @@ class I18n extends React.Component {
   }
 
   // Check if the text need replace some params
-  params(text: string, params: Object) {
+  params(text: string, params: Object): string {
     if (params !== undefined) {
       for (let k in params) {
         let reg = new RegExp('\{' + k + '\}', 'g')
