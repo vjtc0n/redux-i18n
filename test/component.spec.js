@@ -12,6 +12,7 @@ import {setLanguage} from '../dist/actions'
 import TransWithoutParams from './components/TransWithoutParams'
 import TransWithParams from './components/TransWithParams'
 import Dates from './components/Dates'
+import WithJsx from './components/WithJsx'
 
 const translations = {
   es: {
@@ -53,6 +54,14 @@ describe('component test', function() {
       </Provider>
     ))
 
+    this.withjsx = ReactDOM.findDOMNode(TestUtils.renderIntoDocument(
+      <Provider store={this.store}>
+        <I18n translations={translations}>
+          <WithJsx/>
+        </I18n>
+      </Provider>
+    ))
+
   })
 
   it('initial state', function() {
@@ -84,6 +93,10 @@ describe('component test', function() {
     expect(this.dates.textContent).toEqual('2016-01-01')
     this.store.dispatch(setLanguage('es'))
     expect(this.dates.textContent).toEqual('01/01/2016')
+  })
+
+  it('with jsx', function() {
+    expect(this.withjsx.textContent).toNotEqual('Hello [object Object]')
   })
 
 })
