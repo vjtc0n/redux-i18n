@@ -3,12 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.setLanguage = setLanguage;
+exports.setTheme = setTheme;
 /*
  * Project: redux-i18n
  * File: actions.js
  */
 
-function setLanguage(lang) {
-  return { type: 'REDUX_I18N_SET_LANGUAGE', lang: lang };
+function setTheme(theme) {
+  return { type: 'REDUX_I18N_SET_THEME', theme: theme };
 }

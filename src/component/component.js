@@ -6,7 +6,7 @@
 import React from 'react'
 import deepForceUpdate from 'react-deep-force-update'
 
-class I18n extends React.Component {
+class I18nTheme extends React.Component {
 
   constructor(props) {
     super(props)
@@ -75,12 +75,12 @@ class I18n extends React.Component {
   }
 }
 
-I18n.childContextTypes = {
+I18nTheme.childContextTypes = {
   t: React.PropTypes.func.isRequired
 }
 
-I18n.propTypes = {
+I18nTheme.propTypes = {
   translations: React.PropTypes.object.isRequired
 }
 
-export default I18n
+export default I18nTheme

@@ -4,8 +4,8 @@
  */
 
 import {connect} from 'react-redux'
-import I18n from './component'
+import I18nTheme from './component'
 
 export default connect(state => ({
   lang: state.i18nState.lang
-}))(I18n)
+}))(I18nTheme)

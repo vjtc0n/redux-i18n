@@ -4,13 +4,13 @@
  */
 
 const reduxI18nState = {
-  lang: 'en'
+  theme: 'standard'
 }
 
-export function i18nState(state = reduxI18nState, action) {
+export function i18nThemeState(state = reduxI18nState, action) {
   switch (action.type) {
-    case 'REDUX_I18N_SET_LANGUAGE':
-        return {...state, lang: action.lang}
+    case 'REDUX_I18N_SET_THEME':
+        return {...state, theme: action.theme}
     default:
         return state
   }

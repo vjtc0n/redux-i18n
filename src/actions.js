@@ -3,6 +3,6 @@
  * File: actions.js
  */
 
-export function setLanguage(lang) {
-  return {type: 'REDUX_I18N_SET_LANGUAGE', lang}
+export function setTheme(theme) {
+  return {type: 'REDUX_I18N_SET_THEME', theme}
 }

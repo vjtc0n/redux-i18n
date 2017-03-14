@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -27,13 +27,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 * File: component/component.js
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 */
 
-var I18n = function (_React$Component) {
-  _inherits(I18n, _React$Component);
+var I18nTheme = function (_React$Component) {
+  _inherits(I18nTheme, _React$Component);
 
-  function I18n(props) {
-    _classCallCheck(this, I18n);
+  function I18nTheme(props) {
+    _classCallCheck(this, I18nTheme);
 
-    var _this = _possibleConstructorReturn(this, (I18n.__proto__ || Object.getPrototypeOf(I18n)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (I18nTheme.__proto__ || Object.getPrototypeOf(I18nTheme)).call(this, props));
 
     _this.trans = _this.trans.bind(_this);
     return _this;
@@ -42,7 +42,7 @@ var I18n = function (_React$Component) {
   // Check if the text need replace some params
 
 
-  _createClass(I18n, [{
+  _createClass(I18nTheme, [{
     key: 'params',
     value: function params(text, _params) {
       if (_params !== undefined) {
@@ -111,15 +111,15 @@ var I18n = function (_React$Component) {
     }
   }]);
 
-  return I18n;
+  return I18nTheme;
 }(_react2.default.Component);
 
-I18n.childContextTypes = {
+I18nTheme.childContextTypes = {
   t: _react2.default.PropTypes.func.isRequired
 };
 
-I18n.propTypes = {
+I18nTheme.propTypes = {
   translations: _react2.default.PropTypes.object.isRequired
 };
 
-exports.default = I18n;
+exports.default = I18nTheme;
