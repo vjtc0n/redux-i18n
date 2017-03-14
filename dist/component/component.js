@@ -67,7 +67,7 @@ var I18nTheme = function (_React$Component) {
   }, {
     key: 'trans',
     value: function trans(textKey, params, comment) {
-      var langMessages = this.props.translations[this.props.lang];
+      var themeMessages = this.props.themes[this.props.theme];
 
       // Checking if textkey contains a pluralize object.
       if ((typeof textKey === 'undefined' ? 'undefined' : _typeof(textKey)) === 'object') {
@@ -75,15 +75,15 @@ var I18nTheme = function (_React$Component) {
       }
 
       // Fall back lang
-      if (langMessages === undefined && this.props.lang.indexOf('-') > -1) {
-        langMessages = this.props.translations[this.props.lang.split('-')[0]];
+      if (themeMessages === undefined && this.props.theme.indexOf('-') > -1) {
+        themeMessages = this.props.themes[this.props.theme.split('-')[0]];
       }
 
-      if (langMessages === undefined) {
+      if (themeMessages === undefined) {
         return this.params(textKey, params);
       }
 
-      var message = langMessages[textKey];
+      var message = themeMessages[textKey];
       if (message === undefined || message === '') {
         return this.params(textKey, params);
       }
@@ -94,13 +94,13 @@ var I18nTheme = function (_React$Component) {
     key: 'getChildContext',
     value: function getChildContext() {
       return {
-        t: this.trans
+        c: this.trans
       };
     }
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      if (prevProps.lang !== this.props.lang) {
+      if (prevProps.theme !== this.props.theme) {
         (0, _reactDeepForceUpdate2.default)(this);
       }
     }
@@ -115,11 +115,11 @@ var I18nTheme = function (_React$Component) {
 }(_react2.default.Component);
 
 I18nTheme.childContextTypes = {
-  t: _react2.default.PropTypes.func.isRequired
+  c: _react2.default.PropTypes.func.isRequired
 };
 
 I18nTheme.propTypes = {
-  translations: _react2.default.PropTypes.object.isRequired
+  themes: _react2.default.PropTypes.object.isRequired
 };
 
 exports.default = I18nTheme;

@@ -34,7 +34,7 @@ class I18nTheme extends React.Component {
 
   // Main method for translating texts
   trans(textKey, params, comment) {
-    let langMessages = this.props.translations[this.props.lang]
+    let themeMessages = this.props.themes[this.props.theme]
 
     // Checking if textkey contains a pluralize object.
     if (typeof textKey === 'object') {
@@ -42,15 +42,15 @@ class I18nTheme extends React.Component {
     }
 
     // Fall back lang
-    if (langMessages === undefined && this.props.lang.indexOf('-') > -1) {
-      langMessages = this.props.translations[this.props.lang.split('-')[0]]
+    if (themeMessages === undefined && this.props.theme.indexOf('-') > -1) {
+      themeMessages = this.props.themes[this.props.theme.split('-')[0]]
     }
 
-    if (langMessages === undefined) {
+    if (themeMessages === undefined) {
       return this.params(textKey, params)
     }
 
-    let message = langMessages[textKey]
+    let message = themeMessages[textKey]
     if (message === undefined || message === '') {
       return this.params(textKey, params)
     }
@@ -60,12 +60,12 @@ class I18nTheme extends React.Component {
 
   getChildContext() {
     return {
-      t: this.trans
+      c: this.trans
     }
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.lang !== this.props.lang) {
+    if (prevProps.theme !== this.props.theme) {
       deepForceUpdate(this)
     }
   }
@@ -76,11 +76,11 @@ class I18nTheme extends React.Component {
 }
 
 I18nTheme.childContextTypes = {
-  t: React.PropTypes.func.isRequired
+  c: React.PropTypes.func.isRequired
 }
 
 I18nTheme.propTypes = {
-  translations: React.PropTypes.object.isRequired
+  themes: React.PropTypes.object.isRequired
 }
 
 export default I18nTheme
