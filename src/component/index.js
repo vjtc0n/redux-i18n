@@ -7,5 +7,5 @@ import {connect} from 'react-redux'
 import I18nTheme from './component'
 
 export default connect(state => ({
-  lang: state.i18nState.lang
+  theme: state.reduxI18nState.theme
 }))(I18nTheme)

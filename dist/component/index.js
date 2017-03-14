@@ -19,6 +19,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = (0, _reactRedux.connect)(function (state) {
   return {
-    lang: state.i18nState.lang
+    theme: state.reduxI18nState.theme
   };
 })(_component2.default);
